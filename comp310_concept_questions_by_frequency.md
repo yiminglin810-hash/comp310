@@ -1,6 +1,6 @@
 # COMP310 Concept Questions Grouped by Frequency
 
-This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by similar topic type, ordered from highest to lowest exam frequency.
+This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topic, from most frequent to least frequent.
 
 ## Frequency 3/3: BDI Practical Reasoning, Planning, and Agent Control Loops
 
@@ -9,54 +9,54 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 实践推理中的 deliberation 和 means-end reasoning 是什么？
 
-**English answer:** Deliberation decides what the agent should try to achieve by generating options and filtering them into intentions. Means-end reasoning decides how to achieve those intentions by producing a plan, usually a sequence of actions.
+**English answer:** Deliberation decides what goals the agent should commit to. It generates options and filters them into intentions. Means-end reasoning decides how to achieve those intentions by making a plan, usually a sequence of actions.
 
-**中文答案：** deliberation 决定智能体“要做什么”，通过生成选项并筛选成意图；means-end reasoning 决定“如何实现意图”，输出通常是一个动作计划。
+**中文答案：** deliberation 决定智能体“要做什么”，把选项筛选成意图；means-end reasoning 决定“怎么做”，输出通常是一串动作计划。
 
 ### Belief Revision Function
 **English question:** What is the `brf(B, rho)` function in a BDI/practical reasoning agent?
 
 **中文问题：** BDI/实践推理智能体中的 `brf(B, rho)` 函数是什么？
 
-**English answer:** It is the belief revision function. It updates the belief base `B` using the new percept `rho`, so the agent's internal representation reflects what it has perceived.
+**English answer:** It is the belief revision function. It updates beliefs `B` using the new percept `rho`, so the agent's beliefs match what it has perceived.
 
-**中文答案：** 它是信念修正函数，用新的感知 `rho` 更新信念库 `B`，使智能体内部状态反映当前感知到的信息。
+**中文答案：** 它是信念修正函数，用新的感知 `rho` 更新信念 `B`，让智能体的信念反映当前感知。
 
 ### Options Function
 **English question:** What is the `options(B, I)` function?
 
 **中文问题：** `options(B, I)` 函数是什么？
 
-**English answer:** It generates possible options, alternatives, or desires from the agent's current beliefs and intentions. It is the option-generation stage of deliberation.
+**English answer:** It generates possible options or desires from the agent's current beliefs and intentions. This is the option-generation part of deliberation.
 
-**中文答案：** 它根据智能体当前的信念和意图生成可能的选项、替代方案或欲望，是 deliberation 中的选项生成阶段。
+**中文答案：** 它根据当前信念和意图生成可能的选项或欲望，是 deliberation 中的选项生成部分。
 
 ### Filter Function
 **English question:** What is the `filter(B, D, I)` function?
 
 **中文问题：** `filter(B, D, I)` 函数是什么？
 
-**English answer:** It selects the best or most appropriate options from the generated desires `D` and commits the agent to them as intentions.
+**English answer:** It chooses the best options from desires `D` and makes them the agent's intentions.
 
-**中文答案：** 它从生成的欲望 `D` 中选择最合适的选项，并把这些选项确定为智能体承诺执行的意图。
+**中文答案：** 它从欲望 `D` 中选择最合适的选项，并把它们变成智能体承诺执行的意图。
 
 ### Plan Function
 **English question:** What is the `plan(B, I)` or `plan(B, I, Ac)` function?
 
 **中文问题：** `plan(B, I)` 或 `plan(B, I, Ac)` 函数是什么？
 
-**English answer:** It performs means-end reasoning by constructing a sequence of actions, using the available action set if given, that should achieve intention `I` from beliefs `B`.
+**English answer:** It does means-end reasoning by building an action sequence that should achieve intention `I` from beliefs `B`, using the available actions if given.
 
-**中文答案：** 它执行手段-目的推理，根据当前信念 `B`，并在给定动作集合时使用该动作集合，生成实现意图 `I` 的动作序列。
+**中文答案：** 它执行手段-目的推理，根据当前信念 `B`，用可用动作生成实现意图 `I` 的动作序列。
 
 ### Soundness of a Plan
 **English question:** What is the `sound(pi, I, B)` function?
 
 **中文问题：** `sound(pi, I, B)` 函数是什么？
 
-**English answer:** It checks whether the current plan `pi` is still a correct and usable plan for achieving intention `I` under the current beliefs `B`.
+**English answer:** It checks whether the current plan `pi` can still achieve intention `I` under beliefs `B`.
 
-**中文答案：** 它检查当前计划 `pi` 在当前信念 `B` 下是否仍然是实现意图 `I` 的正确可用计划。
+**中文答案：** 它检查当前计划 `pi` 在信念 `B` 下是否仍能实现意图 `I`。
 
 ### BDI Loop Termination
 **English question:** Why can the inner BDI loop terminate?
@@ -72,9 +72,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** BDI 循环如何保持对意图的承诺？
 
-**English answer:** The loop continues while the intention is possible, not yet achieved, and the plan still contains actions. The agent only reconsiders intentions when the `reconsider` heuristic judges that deliberation is worthwhile.
+**English answer:** The loop continues while the intention is still possible, not yet achieved, and the plan still has actions. The agent reconsiders intentions only when `reconsider` says it is worth deliberating again.
 
-**中文答案：** 只要意图仍可能、尚未达成、计划仍有动作，循环就继续执行。只有当 `reconsider` 启发式判断重新审议值得时，智能体才重新考虑意图。
+**中文答案：** 只要意图仍可能、尚未达成、计划仍有动作，循环就继续。只有当 `reconsider` 判断值得重新审议时，智能体才重新考虑意图。
 
 ### Static Environment and Replanning
 **English question:** What happens to reconsideration and replanning if the environment is static?
@@ -90,9 +90,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** STRIPS 中的 precondition list、delete list 和 add list 分别是什么？
 
-**English answer:** The precondition list gives facts that must be true before an action can execute. The delete list gives facts made false by the action. The add list gives facts made true by the action.
+**English answer:** The precondition list gives facts that must be true before the action. The delete list gives facts removed after the action. The add list gives facts added after the action.
 
-**中文答案：** precondition list 是动作执行前必须为真的事实；delete list 是动作执行后变为假的事实；add list 是动作执行后变为真的事实。
+**中文答案：** precondition list 是动作前必须为真的事实；delete list 是动作后被删除的事实；add list 是动作后被加入的事实。
 
 ### Blocksworld Planning
 **English question:** How should Blocksworld plans be checked?
@@ -108,9 +108,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 什么是 transduction problem？
 
-**English answer:** It is the problem of converting raw sensor data such as video, audio, speech, or proximity data into an accurate symbolic description quickly enough for the agent to use.
+**English answer:** It is the problem of turning raw sensor data, such as video or audio, into an accurate symbolic description quickly enough for the agent to use.
 
-**中文答案：** 它是把视频、音频、语音、距离等原始传感器数据及时转换为准确符号描述的问题，使智能体能够使用这些信息。
+**中文答案：** 它是把视频、音频等原始传感器数据及时转换成准确的符号描述，让智能体能使用这些信息。
 
 ## Frequency 3/3: Game Theory and Nash Equilibrium
 
@@ -119,18 +119,18 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 什么是 Nash equilibrium（纳什均衡）？
 
-**English answer:** A Nash equilibrium is a strategy profile where no player can improve its payoff by unilaterally changing strategy, assuming the other players keep their strategies fixed.
+**English answer:** A Nash equilibrium is a set of strategies where no player can get a better payoff by changing its own strategy alone, while others stay the same.
 
-**中文答案：** 纳什均衡是一个策略组合：在其他玩家策略不变的情况下，没有任何玩家能通过单方面改变策略获得更高收益。
+**中文答案：** 纳什均衡是一个策略组合：其他玩家不变时，没有玩家能靠单独改变策略得到更高收益。
 
 ### Pure Strategy Nash Equilibrium
 **English question:** What is a pure strategy Nash equilibrium?
 
 **中文问题：** 什么是纯策略纳什均衡？
 
-**English answer:** It is a Nash equilibrium in which each player chooses one definite pure strategy rather than randomising over strategies.
+**English answer:** It is a Nash equilibrium where each player chooses one fixed strategy instead of using probabilities.
 
-**中文答案：** 它是每个玩家都选择一个确定纯策略、而不是按概率随机选择策略的纳什均衡。
+**中文答案：** 它是每个玩家都选择一个固定纯策略、而不是按概率随机选择的纳什均衡。
 
 ### Chicken
 **English question:** What are the pure strategy Nash equilibria in Chicken?
@@ -202,9 +202,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 什么是 Shapley value（Shapley 值）？
 
-**English answer:** The Shapley value gives each agent its average marginal contribution over all possible orders in which agents may join a coalition.
+**English answer:** The Shapley value gives each agent a payoff based on its average marginal contribution over all possible joining orders.
 
-**中文答案：** Shapley 值把每个智能体在所有可能加入联盟顺序中的平均边际贡献作为其分配。
+**中文答案：** Shapley 值根据每个智能体在所有加入顺序中的平均边际贡献来分配收益。
 
 ### Formal Shapley Formula
 **English question:** What is the formal definition of the Shapley value?
@@ -220,9 +220,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** Shapley 值满足哪些公平性公理？
 
-**English answer:** It satisfies symmetry, dummy player, additivity, and efficiency. These ensure equal contributors are treated equally, non-contributors get only their own value, combined games add consistently, and the grand-coalition value is fully distributed.
+**English answer:** It satisfies symmetry, dummy player, additivity, and efficiency. These mean equal contributors get equal payoff, dummy players get only their own value, values add correctly across combined games, and the whole coalition value is fully shared out.
 
-**中文答案：** 它满足对称性、虚玩家、可加性和有效性。这些公理保证贡献相同者收益相同、无额外贡献者只得自身价值、合并博弈时分配一致相加、大联盟总价值被完整分配。
+**中文答案：** 它满足对称性、虚玩家、可加性和有效性。这些公理表示贡献相同者收益相同，虚玩家只得自身价值，合并博弈时价值可相加，大联盟总价值被完整分配。
 
 ### Marginal Contribution
 **English question:** What is an agent's marginal contribution to a coalition?
@@ -247,9 +247,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 支付分配在 core 中是什么意思？
 
-**English answer:** The distribution must be feasible for the grand coalition, and no coalition or individual should receive less than it can guarantee by itself.
+**English answer:** The payoff must not exceed the grand coalition's value, and no player or coalition should get less than it can get by itself.
 
-**中文答案：** 该分配必须对大联盟可行，并且任何联盟或个人都不应少于其自身能够保证的价值。
+**中文答案：** 总支付不能超过大联盟价值，而且任何玩家或联盟都不能少于它自己能保证的价值。
 
 ## Frequency 3/3: Argumentation
 
@@ -258,18 +258,18 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 抽象论证系统中的 grounded extension 是什么？
 
-**English answer:** It is the least fixed point of the argument defence process: start with unattacked arguments as `IN`, mark arguments they attack as `OUT`, then accept arguments whose attackers are all defeated.
+**English answer:** It is found by starting with unattacked arguments as `IN`, marking the arguments they attack as `OUT`, and then accepting arguments whose attackers are defeated.
 
-**中文答案：** 它是论证防卫过程的最小不动点：先把未被攻击的论证标为 `IN`，把它们攻击的论证标为 `OUT`，再接受所有攻击者都被击败的论证。
+**中文答案：** 它的计算方法是：先把未被攻击的论证标为 `IN`，把它们攻击的论证标为 `OUT`，再接受攻击者都被击败的论证。
 
 ### Empty Grounded Extension
 **English question:** When can the grounded extension be empty?
 
 **中文问题：** grounded extension 什么时候可能为空？
 
-**English answer:** It can be empty when every argument is attacked and no argument can be initially accepted as unattacked.
+**English answer:** It can be empty when every argument is attacked, so no argument can be accepted at the start.
 
-**中文答案：** 当每个论证都受到攻击，且没有任何论证能先作为未受攻击论证被接受时，grounded extension 可能为空。
+**中文答案：** 当每个论证都受到攻击，没有论证能一开始被接受时，grounded extension 可能为空。
 
 ### Deductive Rebuttal
 **English question:** What is a rebuttal in deductive argumentation?
@@ -323,9 +323,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** reactivity、proactiveness 和 social ability 分别是什么？
 
-**English answer:** Reactivity is timely response to environmental change. Proactiveness is taking initiative to pursue goals. Social ability is interacting with other agents or humans through communication, cooperation, coordination, or negotiation.
+**English answer:** Reactivity means responding to environmental changes. Proactiveness means taking initiative to achieve goals. Social ability means interacting with agents or humans through communication, cooperation, coordination, or negotiation.
 
-**中文答案：** reactivity 是及时响应环境变化；proactiveness 是主动追求目标；social ability 是通过通信、合作、协调或谈判与其他智能体或人类交互。
+**中文答案：** reactivity 是响应环境变化；proactiveness 是主动追求目标；social ability 是通过通信、合作、协调或谈判与其他智能体或人类交互。
 
 ### Abstract Agent Functions
 **English question:** What are `see`, `action`, and `next` in an abstract agent model?
@@ -341,9 +341,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 什么是谓词任务规范？
 
-**English answer:** It maps each run to a Boolean utility, `Psi: R -> {0,1}`, where `1` means the task succeeds and `0` means it fails.
+**English answer:** It maps each run to `0` or `1`: `Psi: R -> {0,1}`. `1` means success and `0` means failure.
 
-**中文答案：** 它把每条运行映射到布尔效用 `Psi: R -> {0,1}`，其中 `1` 表示任务成功，`0` 表示失败。
+**中文答案：** 它把每条运行映射到 `0` 或 `1`：`Psi: R -> {0,1}`。`1` 表示成功，`0` 表示失败。
 
 ### Achievement Task
 **English question:** What is an achievement task?
@@ -368,9 +368,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 如何用期望效用比较智能体？
 
-**English answer:** For each possible run, multiply the run's probability by its utility, then sum these products. The agent with the larger expected utility is optimal with respect to that environment and utility function.
+**English answer:** For each run, multiply its probability by its utility, then add the results. The agent with the higher expected utility is optimal for that environment and utility function.
 
-**中文答案：** 对每条可能运行，用运行概率乘以运行效用，再把这些乘积求和。期望效用更大的智能体相对于该环境和效用函数是最优的。
+**中文答案：** 对每条运行，用概率乘以效用再求和。期望效用更大的智能体在该环境和效用函数下最优。
 
 ## Frequency 2/3: Social Choice and Voting
 
@@ -397,9 +397,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 什么是顺序多数选举？
 
-**English answer:** Alternatives are compared pairwise according to a linear agenda; the winner of one contest faces the next alternative until a final winner remains.
+**English answer:** Alternatives are compared two at a time following an agenda. The winner faces the next alternative until one final winner remains.
 
-**中文答案：** 候选项按照线性议程进行两两多数对决；每轮胜者继续与下一个候选项对决，直到产生最终赢家。
+**中文答案：** 候选项按议程两两对决；每轮胜者再和下一个候选项对决，直到产生最终赢家。
 
 ### Possible Winner
 **English question:** What is a possible winner in a sequential majority election?
@@ -473,9 +473,9 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 多智能体系统中的 social law 是什么？
 
-**English answer:** A social law is a set of constraints forbidding certain actions in certain environment states, used to coordinate agents while preserving reachability between important focal states.
+**English answer:** A social law is a set of rules that forbids some actions in some states. It helps coordinate agents without blocking movement between important focal states.
 
-**中文答案：** social law 是一组约束，禁止智能体在某些环境状态下执行某些动作，用于协调行为，同时保持重要焦点状态之间的可达性。
+**中文答案：** social law 是一组规则，禁止智能体在某些状态下执行某些动作。它用于协调行为，同时不阻断重要焦点状态之间的可达性。
 
 ## Frequency 1/3: Ontologies, Speech Acts, and Agent Platforms
 
@@ -493,7 +493,7 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 什么是领域本体？
 
-**English answer:** It defines concepts for a specific domain, often reusing an upper ontology; for example, medical terminology for medical applications.
+**English answer:** It defines concepts for one domain, often reusing an upper ontology; for example, medical terms for medical applications.
 
 **中文答案：** 它定义某一特定领域中的概念，通常复用上层本体，例如医学应用中的医学术语。
 
@@ -502,7 +502,7 @@ This document reorganises the 2016/17, 2017/18, and 2018/19 concept questions by
 
 **中文问题：** 什么是应用本体？
 
-**English answer:** It defines concepts needed by one specific application and is usually less reusable outside that application.
+**English answer:** It defines concepts needed by one specific application and is usually not very reusable outside it.
 
 **中文答案：** 它定义某个具体应用需要的概念，通常只在该应用内部有用，复用性较低。
 
