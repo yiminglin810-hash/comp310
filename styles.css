@@ -198,6 +198,87 @@ h2 {
   background: var(--accent-soft);
 }
 
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1120px;
+  margin: 0 auto 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-title {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.year-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.year-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  padding: 0 10px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.year-chip:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.year-chip input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+}
+
+.clear-filter {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  padding: 0 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.clear-filter:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.clear-filter:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -379,6 +460,11 @@ code {
 
   .controls {
     justify-content: stretch;
+  }
+
+  .filters {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .search,

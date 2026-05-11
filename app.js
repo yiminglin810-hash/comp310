@@ -2,15 +2,19 @@ const state = {
   categoryIndex: 0,
   openCards: new Set(),
   search: "",
+  selectedYears: new Set(),
 };
 
 const categories = window.COMP310_DATA || [];
+const answerYears = ["2015/16", "2016/17", "2017/18"];
 
 const categoryList = document.querySelector("#categoryList");
 const cards = document.querySelector("#cards");
 const categoryTitle = document.querySelector("#categoryTitle");
 const frequencyLabel = document.querySelector("#frequencyLabel");
 const searchInput = document.querySelector("#searchInput");
+const yearFilter = document.querySelector("#yearFilter");
+const clearYearFilterButton = document.querySelector("#clearYearFilterButton");
 const showAllButton = document.querySelector("#showAllButton");
 const hideAllButton = document.querySelector("#hideAllButton");
 const topicCount = document.querySelector("#topicCount");
@@ -33,15 +37,64 @@ function matchesSearch(item) {
   return haystack.includes(state.search);
 }
 
+function matchingYears(item) {
+  const itemYears = item.years || [];
+  if (!state.selectedYears.size) return itemYears;
+  return itemYears.filter((year) => state.selectedYears.has(year));
+}
+
+function selectedYearCount(item) {
+  return matchingYears(item).length;
+}
+
+function matchesYear(item) {
+  return !state.selectedYears.size || selectedYearCount(item) > 0;
+}
+
+function matchesFilters(item) {
+  return matchesSearch(item) && matchesYear(item);
+}
+
+function countAppearances(items) {
+  return items.reduce((sum, item) => sum + (state.selectedYears.size ? selectedYearCount(item) : item.count || 0), 0);
+}
+
+function countBadgeText(item) {
+  if (!state.selectedYears.size) return `考过 ${item.count || 0} 次`;
+  return `选中 ${selectedYearCount(item)} 次 / 总 ${item.count || 0}`;
+}
+
+function yearSummary(item) {
+  const years = item.years || [];
+  if (!state.selectedYears.size) return years.join(", ");
+  return `匹配: ${matchingYears(item).join(", ")} · 全部: ${years.join(", ")}`;
+}
+
+function renderYearFilter() {
+  yearFilter.innerHTML = answerYears
+    .map((year) => {
+      const checked = state.selectedYears.has(year) ? " checked" : "";
+      return `
+        <label class="year-chip">
+          <input type="checkbox" value="${year}"${checked}>
+          <span>${year}</span>
+        </label>
+      `;
+    })
+    .join("");
+  clearYearFilterButton.disabled = state.selectedYears.size === 0;
+}
+
 function renderCategories() {
   categoryList.innerHTML = categories
     .map((category, index) => {
       const active = index === state.categoryIndex ? " active" : "";
-      const totalAppearances = category.items.reduce((sum, item) => sum + (item.count || 0), 0);
+      const yearFilteredItems = category.items.filter(matchesYear);
+      const totalAppearances = countAppearances(yearFilteredItems);
       return `
         <button class="category-button${active}" type="button" data-category="${index}">
           <strong>${category.title}</strong>
-          <span><em>${category.frequency}</em><em>${category.items.length} 题 / ${totalAppearances} 次</em></span>
+          <span><em>${category.frequency}</em><em>${yearFilteredItems.length} 题 / ${totalAppearances} 次</em></span>
         </button>
       `;
     })
@@ -50,12 +103,14 @@ function renderCategories() {
 
 function renderCards() {
   const category = categories[state.categoryIndex];
-  const visibleItems = category.items.filter(matchesSearch);
-  const totalAppearances = category.items.reduce((sum, item) => sum + (item.count || 0), 0);
+  const visibleItems = category.items.filter(matchesFilters);
+  const yearFilteredItems = category.items.filter(matchesYear);
+  const totalAppearances = countAppearances(yearFilteredItems);
+  const yearLabel = state.selectedYears.size ? ` · 年份 ${Array.from(state.selectedYears).join(", ")}` : "";
 
   categoryTitle.textContent = category.title;
-  frequencyLabel.textContent = `${category.frequency} · 累计 ${totalAppearances} 次`;
-  topicCount.textContent = category.items.length;
+  frequencyLabel.textContent = `${category.frequency} · 累计 ${totalAppearances} 次${yearLabel}`;
+  topicCount.textContent = yearFilteredItems.length;
   visibleCount.textContent = visibleItems.length;
   answerCount.textContent = visibleItems.filter((item) => state.openCards.has(item.id)).length;
 
@@ -73,9 +128,9 @@ function renderCards() {
             <div class="card-title">
               <h3>
                 <span>${item.title}</span>
-                <span class="count-badge" title="${item.years ? item.years.join(", ") : ""}">考过 ${item.count || 0} 次</span>
+                <span class="count-badge" title="${item.years ? item.years.join(", ") : ""}">${countBadgeText(item)}</span>
               </h3>
-              <p>${category.title}${item.years ? ` · ${item.years.join(", ")}` : ""}</p>
+              <p>${category.title}${item.years ? ` · ${yearSummary(item)}` : ""}</p>
             </div>
             <button class="answer-toggle" type="button" aria-expanded="${isOpen}">
               ${isOpen ? "隐藏答案" : "显示答案"}
@@ -108,6 +163,7 @@ function renderCards() {
 }
 
 function render() {
+  renderYearFilter();
   renderCategories();
   renderCards();
 }
@@ -135,11 +191,30 @@ cards.addEventListener("click", (event) => {
 
 searchInput.addEventListener("input", (event) => {
   state.search = normalise(event.target.value);
+  renderCategories();
   renderCards();
 });
 
+yearFilter.addEventListener("change", (event) => {
+  const checkbox = event.target.closest("input[type='checkbox']");
+  if (!checkbox) return;
+  if (checkbox.checked) {
+    state.selectedYears.add(checkbox.value);
+  } else {
+    state.selectedYears.delete(checkbox.value);
+  }
+  state.openCards.clear();
+  render();
+});
+
+clearYearFilterButton.addEventListener("click", () => {
+  state.selectedYears.clear();
+  state.openCards.clear();
+  render();
+});
+
 showAllButton.addEventListener("click", () => {
-  categories[state.categoryIndex].items.filter(matchesSearch).forEach((item) => state.openCards.add(item.id));
+  categories[state.categoryIndex].items.filter(matchesFilters).forEach((item) => state.openCards.add(item.id));
   renderCards();
 });
 
