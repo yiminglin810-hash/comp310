@@ -6,7 +6,7 @@ const state = {
 };
 
 const categories = window.COMP310_DATA || [];
-const answerYears = ["2015/16", "2016/17", "2017/18"];
+const filterYears = ["2015/16", "2016/17", "2017/18", "2018/19"];
 
 const categoryList = document.querySelector("#categoryList");
 const cards = document.querySelector("#cards");
@@ -71,7 +71,7 @@ function yearSummary(item) {
 }
 
 function renderYearFilter() {
-  yearFilter.innerHTML = answerYears
+  yearFilter.innerHTML = filterYears
     .map((year) => {
       const checked = state.selectedYears.has(year) ? " checked" : "";
       return `
