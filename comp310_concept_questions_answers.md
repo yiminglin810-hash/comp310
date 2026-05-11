@@ -509,3 +509,302 @@ Source PDFs: COMP310 Exam 2016-17-1, Model Solutions 2016-17, COMP310 Exam 2017-
 **English answer:** The DF is a yellow-pages service where agents register services and discover other agents by service.
 
 **中文答案：** DF 类似黄页服务，智能体可注册自己的服务，也可按服务查找其他智能体。
+
+## 2018/19
+
+### Q1(a)
+**English question:** What are the aims and outputs of deliberation and means-end reasoning?
+
+**中文问题：** deliberation 和 means-end reasoning 的目标与输出分别是什么？
+
+**English answer:** Deliberation decides what the agent should try to achieve; it generates options and filters them into intentions. Means-end reasoning decides how to achieve those intentions; its output is a plan, namely a sequence of actions.
+
+**中文答案：** deliberation 决定智能体“要做什么”，先生成选项，再筛选成意图。means-end reasoning 决定“如何实现这些意图”，输出是一个计划，也就是动作序列。
+
+### Q1(b)
+**English question:** In STRIPS, what are the precondition list, delete list, and add list of an action?
+
+**中文问题：** STRIPS 中一个动作的 precondition list、delete list 和 add list 分别表示什么？
+
+**English answer:** The precondition list contains facts that must be true before the action can be executed. The delete list contains facts that become false after the action. The add list contains facts that become true after the action.
+
+**中文答案：** precondition list 是动作执行前必须为真的事实；delete list 是动作执行后变为假的事实；add list 是动作执行后变为真的事实。
+
+### Q1(c)(i)
+**English question:** What is the `brf(B, rho)` function?
+
+**中文问题：** `brf(B, rho)` 函数是什么？
+
+**English answer:** It is the belief revision function. It updates the belief base `B` using the new percept `rho`.
+
+**中文答案：** 它是信念修正函数，用新的感知 `rho` 更新信念库 `B`。
+
+### Q1(c)(ii)
+**English question:** What is the `options(B, I)` function?
+
+**中文问题：** `options(B, I)` 函数是什么？
+
+**English answer:** It generates the agent's possible options or desires from its current beliefs and intentions.
+
+**中文答案：** 它根据当前信念和意图生成智能体可能的选项或欲望。
+
+### Q1(c)(iii)
+**English question:** What is the `filter(B, D, I)` function?
+
+**中文问题：** `filter(B, D, I)` 函数是什么？
+
+**English answer:** It selects the best or most appropriate options from the generated desires and commits the agent to them as intentions.
+
+**中文答案：** 它从生成的欲望中选择最合适的选项，并把它们确定为智能体承诺执行的意图。
+
+### Q1(c)(iv)
+**English question:** What is the `plan(B, I, Ac)` function?
+
+**中文问题：** `plan(B, I, Ac)` 函数是什么？
+
+**English answer:** It performs planning over the available actions `Ac`, producing an action sequence that should achieve intention `I` from beliefs `B`.
+
+**中文答案：** 它在可用动作集合 `Ac` 上进行规划，生成一个能从信念 `B` 实现意图 `I` 的动作序列。
+
+### Q1(d)(i)
+**English question:** If the environment is static, does the agent need to reconsider its initial intentions?
+
+**中文问题：** 如果环境是静态的，智能体是否需要重新考虑初始意图？
+
+**English answer:** True: the agent need not reconsider its initial intentions, because the percepts and beliefs do not change in a way that would justify changing the original intentions.
+
+**中文答案：** True：智能体不需要重新考虑初始意图。因为感知和信念不会发生足以改变原始意图的变化。
+
+### Q1(d)(ii)
+**English question:** If the environment is static, will `sound(pi, I, B)` be either true throughout or false throughout?
+
+**中文问题：** 如果环境是静态的，`sound(pi, I, B)` 是否会一直为真或一直为假？
+
+**English answer:** True. Since the beliefs do not change due to new percepts, the plan's soundness is not invalidated by environmental change.
+
+**中文答案：** 是。由于新感知不会改变信念，计划的可靠性不会因为环境变化而被破坏。
+
+### Q1(d)(iii)
+**English question:** If the environment is static, must the agent change its original plan at least once?
+
+**中文问题：** 如果环境是静态的，智能体是否至少会改变一次原计划？
+
+**English answer:** False. If the original plan remains sound, the agent has no reason to replan.
+
+**中文答案：** 否。如果原计划仍然可靠，智能体没有理由重新规划。
+
+### Q2(a)(i)
+**English question:** What is reactivity?
+
+**中文问题：** 什么是 reactivity（反应性）？
+
+**English answer:** Reactivity is the ability of an agent to perceive changes in its environment and respond to those changes in a timely way.
+
+**中文答案：** 反应性是指智能体能够感知环境变化，并及时对这些变化作出响应。
+
+### Q2(a)(ii)
+**English question:** What is proactiveness?
+
+**中文问题：** 什么是 proactiveness（主动性）？
+
+**English answer:** Proactiveness is goal-directed behaviour: the agent does not merely react, but takes initiative to pursue its objectives.
+
+**中文答案：** 主动性是目标导向行为：智能体不只是被动反应，还会主动采取行动追求目标。
+
+### Q2(a)(iii)
+**English question:** What is social ability?
+
+**中文问题：** 什么是 social ability（社会能力）？
+
+**English answer:** Social ability is the ability to interact with other agents or humans, usually through communication, cooperation, coordination, or negotiation.
+
+**中文答案：** 社会能力是指智能体与其他智能体或人类交互的能力，通常包括通信、合作、协调或谈判。
+
+### Q2(b)(ii)
+**English question:** How do we compute the expected utilities of `Ag1` and `Ag2` in the given environment?
+
+**中文问题：** 如何计算给定环境中 `Ag1` 和 `Ag2` 的期望效用？
+
+**English answer:** Sum the probability of each run multiplied by the utility of that run. Here `EU(Ag1)=0.9*0.6*(4+8)+0.9*0.4*(4+6)+0.1*5=10.58`; `EU(Ag2)=0.2*4+0.8*0.6*(5+3+2)+0.8*0.4*(5+7)=9.44`. Therefore `Ag1` is optimal.
+
+**中文答案：** 对每条运行，用运行概率乘以该运行的总效用再求和。本题中 `EU(Ag1)=0.9*0.6*(4+8)+0.9*0.4*(4+6)+0.1*5=10.58`；`EU(Ag2)=0.2*4+0.8*0.6*(5+3+2)+0.8*0.4*(5+7)=9.44`。因此 `Ag1` 最优。
+
+### Q3(a)
+**English question:** What is Nash equilibrium?
+
+**中文问题：** 什么是 Nash equilibrium（纳什均衡）？
+
+**English answer:** A Nash equilibrium is a strategy profile where no player can improve its payoff by unilaterally changing strategy, assuming the other players keep their strategies fixed.
+
+**中文答案：** 纳什均衡是一个策略组合：在其他玩家策略不变的情况下，没有任何玩家能通过单方面改变策略获得更高收益。
+
+### Q3(b)
+**English question:** What are the pure strategy Nash equilibria in the Prisoner's Dilemma matrix?
+
+**中文问题：** Prisoner's Dilemma 矩阵中的纯策略纳什均衡是什么？
+
+**English answer:** The pure strategy Nash equilibrium is `(defect, defect)`, because defection is each player's best response to both cooperation and defection by the other player.
+
+**中文答案：** 纯策略纳什均衡是 `(defect, defect)`，因为无论对方合作还是背叛，背叛都是每个玩家的最佳回应。
+
+### Q3(b)
+**English question:** What are the pure strategy Nash equilibria in the Stag Hunt matrix?
+
+**中文问题：** Stag Hunt 矩阵中的纯策略纳什均衡是什么？
+
+**English answer:** The pure strategy Nash equilibria are `(defect, defect)` and `(cooperate, cooperate)`. In both outcomes, neither player can gain by changing strategy alone.
+
+**中文答案：** 纯策略纳什均衡是 `(defect, defect)` 和 `(cooperate, cooperate)`。在这两个结果中，任一玩家单方面改变策略都不会更好。
+
+### Q3(c)(i)
+**English question:** What is the game of matching pennies?
+
+**中文问题：** matching pennies 是什么游戏？
+
+**English answer:** Two players simultaneously choose one of two sides. One player wins if the choices match, while the other wins if the choices differ; it is a zero-sum game.
+
+**中文答案：** 两个玩家同时选择硬币的一面。若双方选择相同，一方获胜；若不同，另一方获胜。这是一个零和博弈。
+
+### Q3(c)(ii)
+**English question:** Does the matching pennies payoff matrix have a pure strategy Nash equilibrium?
+
+**中文问题：** matching pennies 的收益矩阵是否存在纯策略纳什均衡？
+
+**English answer:** No. In every pure strategy outcome, one of the players would prefer to switch strategy, so no pure profile is stable.
+
+**中文答案：** 不存在。每一个纯策略结果中，总有一方希望改变策略，因此没有稳定的纯策略组合。
+
+### Q3(c)(iii)
+**English question:** What is the mixed strategy Nash equilibrium in matching pennies?
+
+**中文问题：** matching pennies 中的混合策略纳什均衡是什么？
+
+**English answer:** Each player randomises between the two pure strategies with probability `0.5` and `0.5`, making the opponent indifferent between its own strategies.
+
+**中文答案：** 每个玩家都以 `0.5` 和 `0.5` 的概率在两个纯策略之间随机选择，使对方对自己的两个策略无差异。
+
+### Q3(c)(iv)
+**English question:** What does Nash's Theorem state?
+
+**中文问题：** Nash 定理的内容是什么？
+
+**English answer:** Every finite game has at least one Nash equilibrium in mixed strategies.
+
+**中文答案：** 每个有限博弈都至少存在一个混合策略纳什均衡。
+
+### Q4(a)
+**English question:** How is a characteristic function value computed from a marginal contribution net?
+
+**中文问题：** 如何从 marginal contribution net 计算 characteristic function 的值？
+
+**English answer:** A coalition's value is the sum of the values of all rules whose left-hand-side conditions are satisfied by that coalition.
+
+**中文答案：** 一个联盟的价值等于所有被该联盟满足的规则的数值之和。
+
+### Q4(a)(i)
+**English question:** What is `v({a})` for the given marginal contribution net?
+
+**中文问题：** 给定 marginal contribution net 中 `v({a})` 是多少？
+
+**English answer:** `v({a}) = 0`, because no rule is satisfied by coalition `{a}` alone.
+
+**中文答案：** `v({a}) = 0`，因为只有 `{a}` 时没有任何规则被满足。
+
+### Q4(a)(ii)
+**English question:** What is `v({a,c})` for the given marginal contribution net?
+
+**中文问题：** 给定 marginal contribution net 中 `v({a,c})` 是多少？
+
+**English answer:** `v({a,c}) = 2`, using the rule `a and c -> 2`.
+
+**中文答案：** `v({a,c}) = 2`，使用规则 `a and c -> 2`。
+
+### Q4(a)(iii)
+**English question:** What is `v({b,d})` for the given marginal contribution net?
+
+**中文问题：** 给定 marginal contribution net 中 `v({b,d})` 是多少？
+
+**English answer:** `v({b,d}) = 5`, using the rule `d -> 5`.
+
+**中文答案：** `v({b,d}) = 5`，使用规则 `d -> 5`。
+
+### Q4(a)(iv)
+**English question:** What is `v({a,d})` for the given marginal contribution net?
+
+**中文问题：** 给定 marginal contribution net 中 `v({a,d})` 是多少？
+
+**English answer:** `v({a,d}) = 5`, using the rule `d -> 5`.
+
+**中文答案：** `v({a,d}) = 5`，使用规则 `d -> 5`。
+
+### Q4(a)(v)
+**English question:** What is `v({a,b,c,d})` for the given marginal contribution net?
+
+**中文问题：** 给定 marginal contribution net 中 `v({a,b,c,d})` 是多少？
+
+**English answer:** `v({a,b,c,d}) = 7+3+5+4+2 = 21`, because all five rules are satisfied.
+
+**中文答案：** `v({a,b,c,d}) = 7+3+5+4+2 = 21`，因为五条规则全部被满足。
+
+### Q4(b)
+**English question:** How does the Shapley value capture a fair distribution of coalitional value?
+
+**中文问题：** Shapley value 如何体现联盟价值的公平分配？
+
+**English answer:** The Shapley value gives each agent its average marginal contribution over all possible orders in which agents may join a coalition. Formally, `phi_i(v)=sum_{S subseteq N\\{i}} |S|!(n-|S|-1)!/n! * (v(S union {i})-v(S))`.
+
+**中文答案：** Shapley 值把每个智能体在所有可能加入顺序中的平均边际贡献作为其分配。形式化地，`phi_i(v)=sum_{S subseteq N\\{i}} |S|!(n-|S|-1)!/n! * (v(S union {i})-v(S))`。
+
+### Q4(b)
+**English question:** What fairness axioms does the Shapley value satisfy?
+
+**中文问题：** Shapley value 满足哪些公平性公理？
+
+**English answer:** It satisfies symmetry, dummy player, additivity, and efficiency. Symmetry gives equal payoff to agents with equal contributions; dummy gives only individual value to agents adding no extra value; additivity preserves values across combined games; efficiency distributes the full grand-coalition value.
+
+**中文答案：** 它满足对称性、虚玩家、可加性和有效性。对称性表示贡献相同者收益相同；虚玩家表示没有额外贡献者只得到自身价值；可加性表示合并博弈时分配可相加；有效性表示完整分配大联盟的总价值。
+
+### Q5(a)
+**English question:** What is the grounded extension of the given abstract argumentation system?
+
+**中文问题：** 给定抽象论证系统的 grounded extension 是什么？
+
+**English answer:** The grounded extension is `{F, D, B}`. `F` is unattacked, so it is `IN`; therefore `A` and `E` are `OUT`. Since `E` is `OUT`, `D` is defended and becomes `IN`; then `A` is `OUT`, so `B` becomes `IN`; `C` is attacked by `B` and `D`, so `C` is `OUT`.
+
+**中文答案：** grounded extension 是 `{F, D, B}`。`F` 没有被攻击，所以为 `IN`；因此 `A` 和 `E` 为 `OUT`。由于 `E` 为 `OUT`，`D` 被防卫并成为 `IN`；之后 `A` 为 `OUT`，所以 `B` 成为 `IN`；`C` 被 `B` 和 `D` 攻击，所以为 `OUT`。
+
+### Q5(b)
+**English question:** Which candidates can be possible winners in the given majority graph?
+
+**中文问题：** 给定多数图中哪些候选人可能成为 possible winner？
+
+**English answer:** All four candidates `A`, `B`, `C`, and `D` can win under some sequential majority agenda. Example agendas are: `A`: `(B,C,D,A)`; `B`: `(A,C,D,B)`; `C`: `(A,B,D,C)`; `D`: `(C,A,B,D)`.
+
+**中文答案：** 四个候选人 `A`、`B`、`C`、`D` 都可能在某个顺序多数议程中获胜。示例议程为：`A`: `(B,C,D,A)`；`B`: `(A,C,D,B)`；`C`: `(A,B,D,C)`；`D`: `(C,A,B,D)`。
+
+### Q5(c)(i)
+**English question:** What is a possible winner in a sequential majority election?
+
+**中文问题：** 顺序多数选举中的 possible winner 是什么？
+
+**English answer:** An outcome is a possible winner if there exists at least one agenda that makes it the final winner. In a majority graph, this can be checked by asking whether some ordering of pairwise contests can eliminate the alternatives that beat it before the final contest.
+
+**中文答案：** 如果存在至少一个议程能使某个结果最终获胜，那么它就是 possible winner。在多数图中，可以通过检查是否存在一种两两对决顺序，能在最终对决前淘汰击败它的候选人来判断。
+
+### Q5(c)(ii)
+**English question:** What is a Condorcet winner in a sequential majority election?
+
+**中文问题：** 顺序多数选举中的 Condorcet winner 是什么？
+
+**English answer:** A Condorcet winner is an outcome that beats every other outcome in pairwise majority contests; equivalently, it wins under every possible agenda.
+
+**中文答案：** Condorcet winner 是在两两多数对决中击败所有其他结果的候选人；等价地，它在每一种可能议程下都会获胜。
+
+### Q5(c)(iii)
+**English question:** Are there any Condorcet winners in the given majority graph?
+
+**中文问题：** 给定多数图中是否存在 Condorcet winner？
+
+**English answer:** No. No candidate has outgoing majority edges to all other candidates, so there is no overall winner for every possible agenda.
+
+**中文答案：** 没有。没有任何候选人能在多数图中击败所有其他候选人，因此不存在对所有议程都获胜的总体赢家。
