@@ -296,6 +296,27 @@ h2 {
   line-height: 1.65;
 }
 
+.formula {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 8px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7fafc;
+  padding: 12px;
+  color: #0f1f2a;
+  font-family: "Cambria Math", "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.formula-note {
+  display: block;
+  margin-top: 6px;
+}
+
 .answer-wrap {
   display: none;
 }

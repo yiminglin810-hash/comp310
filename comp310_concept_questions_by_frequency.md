@@ -211,9 +211,9 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文问题：** Shapley 值的形式化定义是什么？
 
-**English answer:** `phi_i(v)=sum_{S subseteq N\\{i}} |S|!(n-|S|-1)!/n! * (v(S union {i})-v(S))`, where the last term is agent `i`'s marginal contribution to coalition `S`.
+**English answer:** `phi_i(v) = sum over S subseteq N without i of [ |S|!(n-|S|-1)! / n! ] * [ v(S union {i}) - v(S) ]`, where the last bracket is agent `i`'s marginal contribution to coalition `S`.
 
-**中文答案：** `phi_i(v)=sum_{S subseteq N\\{i}} |S|!(n-|S|-1)!/n! * (v(S union {i})-v(S))`，其中最后一项是智能体 `i` 对联盟 `S` 的边际贡献。
+**中文答案：** `phi_i(v) = 对所有不含 i 的 S 求和：[ |S|!(n-|S|-1)! / n! ] * [ v(S 加上 {i}) - v(S) ]`，其中最后一个括号是智能体 `i` 对联盟 `S` 的边际贡献。
 
 ### Shapley Fairness Axioms
 **English question:** What fairness axioms does the Shapley value satisfy?

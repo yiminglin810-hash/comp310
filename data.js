@@ -195,8 +195,8 @@ window.COMP310_DATA = [
         "title": "Formal Shapley Formula",
         "englishQuestion": "What is the formal definition of the Shapley value?",
         "chineseQuestion": "Shapley 值的形式化定义是什么？",
-        "englishAnswer": "phi_i(v)=sum_{S subseteq N\\\\{i}} |S|!(n-|S|-1)!/n! * (v(S union {i})-v(S)), where the last term is agent i's marginal contribution to coalition S.",
-        "chineseAnswer": "phi_i(v)=sum_{S subseteq N\\\\{i}} |S|!(n-|S|-1)!/n! * (v(S union {i})-v(S))，其中最后一项是智能体 i 对联盟 S 的边际贡献。",
+        "englishAnswer": "<span class=\"formula\">φᵢ(v) = Σ<sub>S ⊆ N \\ {i}</sub> ( |S|! (n - |S| - 1)! / n! ) [ v(S ∪ {i}) - v(S) ]</span><span class=\"formula-note\">The last bracket is agent i's marginal contribution to coalition S.</span>",
+        "chineseAnswer": "<span class=\"formula\">φᵢ(v) = Σ<sub>S ⊆ N \\ {i}</sub> ( |S|! (n - |S| - 1)! / n! ) [ v(S ∪ {i}) - v(S) ]</span><span class=\"formula-note\">最后一个括号表示智能体 i 对联盟 S 的边际贡献。</span>",
         "id": "c2-q1"
       },
       {
