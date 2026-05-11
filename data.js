@@ -1095,5 +1095,218 @@ window.COMP310_DATA = [
         ]
       }
     ]
+  },
+  {
+    "frequency": "Problem Solving High Frequency",
+    "title": "Computation and Problem-Solving High-Frequency Patterns",
+    "items": [
+      {
+        "title": "Pure Strategy Nash Equilibria from Payoff Matrices",
+        "englishQuestion": "How do you find pure strategy Nash equilibria in a payoff matrix?",
+        "chineseQuestion": "如何从收益矩阵中找纯策略纳什均衡？",
+        "englishAnswer": "Mark each player's best responses. For each column, mark the row choices that give the row player the highest payoff; for each row, mark the column choices that give the column player the highest payoff. Any cell with both marks is a pure Nash equilibrium. Finish by saying neither player can improve by changing strategy alone.",
+        "chineseAnswer": "先标出双方的最佳回应。对每一列，找行玩家收益最高的行；对每一行，找列玩家收益最高的列。两个最佳回应同时出现的格子就是纯策略纳什均衡。最后写一句：在该结果下，任何一方单独改变策略都不能变好。",
+        "id": "c9-q0",
+        "count": 10,
+        "years": [
+          "2008/09",
+          "2009/10",
+          "2010/11",
+          "2011/12",
+          "2012/13",
+          "2013/14",
+          "2015/16",
+          "2016/17",
+          "2017/18",
+          "2018/19"
+        ]
+      },
+      {
+        "title": "Characteristic Function Values from Marginal Contribution Nets",
+        "englishQuestion": "How do you calculate v(S) from a marginal contribution net?",
+        "chineseQuestion": "如何根据 marginal contribution net 计算 v(S)？",
+        "englishAnswer": "For a coalition S, add the values of exactly the rules whose conditions are satisfied. A positive literal such as a and b must be in S; a negative literal such as not c means c must not be in S. If no rule applies, add 0. Always list the rules used, because the marks are often for the working.",
+        "chineseAnswer": "对联盟 S，把所有条件被满足的规则数值加起来。正文字面量如 a 和 b 必须在 S 中；负文字面量如 not c 表示 c 不能在 S 中。没有规则触发就加 0。答案里要写清用了哪些规则，因为过程分很多。",
+        "id": "c9-q1",
+        "count": 9,
+        "years": [
+          "2008/09",
+          "2009/10",
+          "2011/12",
+          "2012/13",
+          "2013/14",
+          "2014/15",
+          "2015/16",
+          "2017/18",
+          "2018/19"
+        ]
+      },
+      {
+        "title": "Expected Utility over Runs",
+        "englishQuestion": "How do you calculate an agent's expected utility over possible runs?",
+        "chineseQuestion": "如何计算智能体在可能运行路径上的期望效用？",
+        "englishAnswer": "Draw the run tree from the initial state. For each complete run, multiply the edge probabilities on that run to get P(r). Work out u(r); if the run has several transitions, add the transition utilities when the question says to do so. Then use EU(Ag, Env) = sum over runs of P(r) times u(r), and choose the agent with the higher expected utility.",
+        "chineseAnswer": "先从初始状态画出运行树。对每条完整路径，把边上的概率相乘得到 P(r)。再算 u(r)；如果题目说明多步路径的效用要相加，就把每一步效用相加。最后用 EU(Ag, Env) = 所有路径的 P(r) 乘 u(r) 之和，期望效用更高的智能体更优。",
+        "id": "c9-q2",
+        "count": 6,
+        "years": [
+          "2010/11",
+          "2012/13",
+          "2015/16",
+          "2016/17",
+          "2017/18",
+          "2018/19"
+        ]
+      },
+      {
+        "title": "Pareto Efficiency and Social Welfare in Payoff Matrices",
+        "englishQuestion": "How do you identify Pareto efficient outcomes and social-welfare-maximising outcomes?",
+        "chineseQuestion": "如何在收益矩阵中找帕累托有效结果和社会福利最大结果？",
+        "englishAnswer": "For Pareto efficiency, compare a cell with every other cell. It is Pareto efficient if no other cell makes both players at least as well off and one player strictly better off. For social welfare, add the two payoffs in each cell and choose the largest total. If asked, mention that maximising total welfare may ignore unfair distribution.",
+        "chineseAnswer": "找帕累托有效时，把一个格子和所有其他格子比较：如果不存在另一个格子让双方都不差、且至少一方更好，那么它就是帕累托有效。找社会福利最大时，把每个格子的两个收益相加，选总和最大的。若题目要求评价，要说明总福利最大可能忽略分配公平。",
+        "id": "c9-q3",
+        "count": 6,
+        "years": [
+          "2008/09",
+          "2009/10",
+          "2010/11",
+          "2011/12",
+          "2012/13",
+          "2015/16"
+        ]
+      },
+      {
+        "title": "Mixed Strategy Nash Equilibrium in Matching Pennies",
+        "englishQuestion": "How do you answer matching-pennies mixed strategy questions?",
+        "chineseQuestion": "matching pennies 的混合策略纳什均衡题怎么答？",
+        "englishAnswer": "First say there is no pure Nash equilibrium: at every pure outcome, one player wants to switch. For the mixed equilibrium, make the opponent indifferent between its pure strategies. In the standard symmetric matching-pennies matrix, both players choose each side with probability 1/2. You can also state Nash's theorem: every finite game has a mixed-strategy Nash equilibrium.",
+        "chineseAnswer": "先说明没有纯策略纳什均衡：每个纯结果下，总有一方想换策略。求混合均衡时，让对手在自己的两个纯策略之间无差异。标准对称 matching pennies 中，双方各以 1/2 概率选择两面。还可以写 Nash 定理：每个有限博弈都有混合策略纳什均衡。",
+        "id": "c9-q4",
+        "count": 6,
+        "years": [
+          "2008/09",
+          "2010/11",
+          "2011/12",
+          "2013/14",
+          "2017/18",
+          "2018/19"
+        ]
+      },
+      {
+        "title": "Shapley Value Calculation",
+        "englishQuestion": "How do you compute Shapley values in a small coalition game?",
+        "chineseQuestion": "小型联盟博弈中如何计算 Shapley 值？",
+        "englishAnswer": "Use the formula or a permutation table. For each agent i, compute the marginal contribution v(S union {i}) - v(S) for each predecessor coalition S, multiply by the Shapley coefficient, and add the terms. For small exams, a table over all joining orders is often safest. Check that all Shapley values add up to v(N).",
+        "chineseAnswer": "可以用公式，也可以列加入顺序表。对每个智能体 i，计算它对前置联盟 S 的边际贡献 v(S 加 i) - v(S)，乘以 Shapley 系数后求和。考试中人数少时，列出所有加入顺序最稳。最后检查所有 Shapley 值相加是否等于 v(N)。",
+        "id": "c9-q5",
+        "count": 5,
+        "years": [
+          "2008/09",
+          "2009/10",
+          "2011/12",
+          "2016/17",
+          "2017/18"
+        ]
+      },
+      {
+        "title": "Grounded Extension of an Argumentation Graph",
+        "englishQuestion": "How do you compute the grounded extension of an abstract argumentation system?",
+        "chineseQuestion": "如何计算抽象论证系统的 grounded extension？",
+        "englishAnswer": "Label all unattacked arguments IN. Label anything attacked by an IN argument OUT. Then label an argument IN when all its attackers are OUT. Repeat until no label changes. The grounded extension is the set of IN arguments. If every argument is attacked and no IN argument can be started, the grounded extension may be empty.",
+        "chineseAnswer": "先把没有被攻击的论证标为 IN。被 IN 攻击的论证标为 OUT。然后如果某个论证的所有攻击者都是 OUT，就把它标为 IN。重复直到不再变化。grounded extension 就是所有 IN 的集合。如果每个论证都被攻击，且无法启动任何 IN，grounded extension 可能为空集。",
+        "id": "c9-q6",
+        "count": 5,
+        "years": [
+          "2008/09",
+          "2012/13",
+          "2014/15",
+          "2016/17",
+          "2018/19"
+        ]
+      },
+      {
+        "title": "Sequential Majority Possible Winners",
+        "englishQuestion": "How do you solve possible-winner questions in a sequential majority graph?",
+        "chineseQuestion": "如何解顺序多数投票图中的 possible winner 题？",
+        "englishAnswer": "Use the majority graph. A candidate is a possible winner if some agenda can make it win; in graph terms, it must be able to reach every other candidate by directed paths. A Condorcet winner has direct wins against every other candidate and wins under every agenda. For a yes answer, give a concrete linear agenda that makes the candidate survive the pairwise contests.",
+        "chineseAnswer": "看 majority graph。某候选人如果存在一个议程能让它最终获胜，就是 possible winner；图上通常要能通过有向路径到达其他候选人。Condorcet winner 直接击败所有其他候选人，并且在任何议程下都会赢。若答案是 yes，要给出一个具体线性议程，说明它如何一路赢到最后。",
+        "id": "c9-q7",
+        "count": 5,
+        "years": [
+          "2009/10",
+          "2011/12",
+          "2012/13",
+          "2014/15",
+          "2018/19"
+        ]
+      },
+      {
+        "title": "Blocksworld and STRIPS Plan Checking",
+        "englishQuestion": "How do you check or construct a Blocksworld plan?",
+        "chineseQuestion": "如何检查或构造 Blocksworld 计划？",
+        "englishAnswer": "Assume the closed world assumption: facts not listed are false. For each action in order, check its preconditions against the current belief state. If they hold, remove the delete list and add the add list; if they do not hold, the plan fails at that action. To construct a plan, clear blocking blocks first, then build the target tower from bottom to top, and check the final state entails the intention.",
+        "chineseAnswer": "按 closed world assumption，没列出的事实都当作 false。按顺序检查每个动作的前提条件；若满足，就删除 delete list 中的事实并加入 add list；若不满足，计划在该动作处失败。构造计划时，先清除挡住的方块，再从底到顶搭目标塔，最后检查最终状态是否推出所有意图条件。",
+        "id": "c9-q8",
+        "count": 4,
+        "years": [
+          "2012/13",
+          "2014/15",
+          "2015/16",
+          "2017/18"
+        ]
+      },
+      {
+        "title": "Core Membership of a Payoff Distribution",
+        "englishQuestion": "How do you check whether a payoff distribution is in the core?",
+        "chineseQuestion": "如何判断一个收益分配是否在 core 中？",
+        "englishAnswer": "Check efficiency and blocking coalitions. Efficiency means the payoffs add up to v(N). Core stability means every coalition C receives at least what it can get by itself: sum of payoffs for members of C is at least v(C). To show a distribution is not in the core, it is enough to find one coalition that gets less than v(C).",
+        "chineseAnswer": "检查两点：有效性和是否有阻挡联盟。有效性表示所有人的收益相加等于 v(N)。core 稳定性表示任意联盟 C 的成员所得总和至少为 v(C)。要证明某分配不在 core 中，只要找到一个联盟得到的总收益小于 v(C) 即可。",
+        "id": "c9-q9",
+        "count": 3,
+        "years": [
+          "2008/09",
+          "2012/13",
+          "2017/18"
+        ]
+      },
+      {
+        "title": "Conflict-Free, Admissible, and Preferred Extensions",
+        "englishQuestion": "How do you calculate conflict-free sets, admissible sets, and preferred extensions?",
+        "chineseQuestion": "如何计算 conflict-free sets、admissible sets 和 preferred extensions？",
+        "englishAnswer": "A set is conflict-free if no argument in the set attacks another argument in the set. A set defends an argument when it attacks every attacker of that argument. An admissible set is conflict-free and defends all its members. A preferred extension is a maximal admissible set, meaning it cannot be made larger while staying admissible.",
+        "chineseAnswer": "conflict-free 表示集合内部没有论证互相攻击。若一个集合攻击了某论证的所有攻击者，就说它防御了该论证。admissible set 是既 conflict-free 又能防御所有自身成员的集合。preferred extension 是极大的 admissible set，也就是不能再加入更多论证而仍保持 admissible。",
+        "id": "c9-q10",
+        "count": 2,
+        "years": [
+          "2015/16",
+          "2017/18"
+        ]
+      },
+      {
+        "title": "Combinatorial Auction XOR Bid Valuation",
+        "englishQuestion": "How do you evaluate an XOR bid in a combinatorial auction?",
+        "chineseQuestion": "组合拍卖中如何计算 XOR bid 的价值？",
+        "englishAnswer": "Check which listed bundles are contained in the offered bundle. With XOR, the bidder can receive at most one of those listed bundles, so do not add their prices together. If several listed bundles are satisfied, use the best single satisfied bid, usually the highest value. If none is satisfied, the bid gives value 0 for that offer.",
+        "chineseAnswer": "先检查报价中列出的哪些物品组合被当前分配组合包含。XOR 表示竞标者最多只接受其中一个组合，所以不能把多个价格相加。如果多个组合都被满足，取其中一个最好的单项报价，通常是最高价值。若没有任何组合被满足，该分配下价值为 0。",
+        "id": "c9-q11",
+        "count": 2,
+        "years": [
+          "2014/15",
+          "2015/16"
+        ]
+      },
+      {
+        "title": "Borda Count and Alternative Vote Calculations",
+        "englishQuestion": "How do you calculate winners under Borda count and alternative vote?",
+        "chineseQuestion": "如何计算 Borda count 和 alternative vote 的胜者？",
+        "englishAnswer": "For Borda count with k candidates, give k - 1 points for first place, k - 2 for second, and so on; multiply by the number of voters in each column and add totals. For alternative vote, count first choices; if nobody has a majority, eliminate the lowest candidate and transfer those ballots to the next available preference until someone has a majority.",
+        "chineseAnswer": "Borda count 中若有 k 个候选人，第一名得 k - 1 分，第二名得 k - 2 分，依此类推；每列乘以对应人数后求总分。alternative vote 中先数第一选择；若无人过半，淘汰最低者，并把这些选票转移到下一可用偏好，重复直到有人过半。",
+        "id": "c9-q12",
+        "count": 1,
+        "years": [
+          "2016/17"
+        ]
+      }
+    ]
   }
 ];
