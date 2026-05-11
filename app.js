@@ -37,10 +37,11 @@ function renderCategories() {
   categoryList.innerHTML = categories
     .map((category, index) => {
       const active = index === state.categoryIndex ? " active" : "";
+      const totalAppearances = category.items.reduce((sum, item) => sum + (item.count || 0), 0);
       return `
         <button class="category-button${active}" type="button" data-category="${index}">
           <strong>${category.title}</strong>
-          <span><em>${category.frequency}</em><em>${category.items.length} 题</em></span>
+          <span><em>${category.frequency}</em><em>${category.items.length} 题 / ${totalAppearances} 次</em></span>
         </button>
       `;
     })
@@ -50,9 +51,10 @@ function renderCategories() {
 function renderCards() {
   const category = categories[state.categoryIndex];
   const visibleItems = category.items.filter(matchesSearch);
+  const totalAppearances = category.items.reduce((sum, item) => sum + (item.count || 0), 0);
 
   categoryTitle.textContent = category.title;
-  frequencyLabel.textContent = category.frequency;
+  frequencyLabel.textContent = `${category.frequency} · 累计 ${totalAppearances} 次`;
   topicCount.textContent = category.items.length;
   visibleCount.textContent = visibleItems.length;
   answerCount.textContent = visibleItems.filter((item) => state.openCards.has(item.id)).length;
@@ -69,8 +71,11 @@ function renderCards() {
         <article class="question-card${isOpen ? " open" : ""}" data-id="${item.id}">
           <div class="card-header">
             <div class="card-title">
-              <h3>${item.title}</h3>
-              <p>${category.title}</p>
+              <h3>
+                <span>${item.title}</span>
+                <span class="count-badge" title="${item.years ? item.years.join(", ") : ""}">考过 ${item.count || 0} 次</span>
+              </h3>
+              <p>${category.title}${item.years ? ` · ${item.years.join(", ")}` : ""}</p>
             </div>
             <button class="answer-toggle" type="button" aria-expanded="${isOpen}">
               ${isOpen ? "隐藏答案" : "显示答案"}
