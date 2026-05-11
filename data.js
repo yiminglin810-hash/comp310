@@ -1,6 +1,6 @@
 window.COMP310_DATA = [
   {
-    "frequency": "Frequency 3/3",
+    "frequency": "Very High Frequency",
     "title": "BDI Practical Reasoning, Planning, and Agent Control Loops",
     "items": [
       {
@@ -102,7 +102,7 @@ window.COMP310_DATA = [
     ]
   },
   {
-    "frequency": "Frequency 3/3",
+    "frequency": "Very High Frequency",
     "title": "Game Theory and Nash Equilibrium",
     "items": [
       {
@@ -176,11 +176,43 @@ window.COMP310_DATA = [
         "englishAnswer": "Every finite game has at least one Nash equilibrium in mixed strategies.",
         "chineseAnswer": "每个有限博弈都至少存在一个混合策略纳什均衡。",
         "id": "c1-q8"
+      },
+      {
+        "title": "Pareto Efficient Outcome",
+        "englishQuestion": "What is a Pareto efficient outcome?",
+        "chineseQuestion": "什么是 Pareto efficient outcome（帕累托有效结果）？",
+        "englishAnswer": "An outcome is Pareto efficient if no other outcome can make one player better off without making another player worse off.",
+        "chineseAnswer": "如果不存在另一个结果能让某个玩家更好、同时不让其他玩家变差，那么该结果就是帕累托有效的。",
+        "id": "c1-q9"
+      },
+      {
+        "title": "Maximising Social Welfare",
+        "englishQuestion": "What does it mean to maximise social welfare?",
+        "chineseQuestion": "什么是 maximising social welfare（最大化社会福利）？",
+        "englishAnswer": "It means choosing the outcome with the highest total payoff for all players. Its limit is that it may ignore unfairness between players.",
+        "chineseAnswer": "它表示选择所有玩家收益总和最高的结果。局限是它可能忽略玩家之间是否公平。",
+        "id": "c1-q10"
+      },
+      {
+        "title": "Iterated Prisoner's Dilemma",
+        "englishQuestion": "Why can cooperation be rational in the infinitely iterated Prisoner's Dilemma?",
+        "chineseQuestion": "为什么在无限重复 Prisoner's Dilemma 中合作可能是理性的？",
+        "englishAnswer": "Because future rounds can reward cooperation and punish defection. Strategies such as Tit-for-Tat can make long-term cooperation better than short-term defection.",
+        "chineseAnswer": "因为未来回合可以奖励合作、惩罚背叛。像 Tit-for-Tat 这样的策略能让长期合作优于短期背叛。",
+        "id": "c1-q11"
+      },
+      {
+        "title": "Program Equilibrium",
+        "englishQuestion": "How can program equilibria allow cooperation in the one-shot Prisoner's Dilemma?",
+        "chineseQuestion": "program equilibrium 如何让一次性 Prisoner's Dilemma 中的合作成为可能？",
+        "englishAnswer": "Players submit programs that can inspect each other. A program can cooperate if the other program is the same, and defect otherwise, making mutual cooperation rational.",
+        "chineseAnswer": "玩家提交能检查对方程序的程序。如果对方程序相同就合作，否则背叛，这样互相合作可以成为理性结果。",
+        "id": "c1-q12"
       }
     ]
   },
   {
-    "frequency": "Frequency 3/3",
+    "frequency": "Very High Frequency",
     "title": "Cooperative Games, Coalitions, and Shapley Value",
     "items": [
       {
@@ -230,11 +262,19 @@ window.COMP310_DATA = [
         "englishAnswer": "The payoff must not exceed the grand coalition's value, and no player or coalition should get less than it can get by itself.",
         "chineseAnswer": "总支付不能超过大联盟价值，而且任何玩家或联盟都不能少于它自己能保证的价值。",
         "id": "c2-q5"
+      },
+      {
+        "title": "Coalition Stability",
+        "englishQuestion": "What does stability mean in coalition formation?",
+        "chineseQuestion": "联盟形成中的 stability（稳定性）是什么意思？",
+        "englishAnswer": "Stability means no individual or subgroup has a reason to leave the grand coalition, because they cannot get a better payoff by forming their own coalition.",
+        "chineseAnswer": "稳定性表示没有个人或小联盟有理由离开大联盟，因为它们自己组联盟也得不到更好的收益。",
+        "id": "c2-q6"
       }
     ]
   },
   {
-    "frequency": "Frequency 3/3",
+    "frequency": "Very High Frequency",
     "title": "Argumentation",
     "items": [
       {
@@ -296,7 +336,7 @@ window.COMP310_DATA = [
     ]
   },
   {
-    "frequency": "Frequency 2/3",
+    "frequency": "High Frequency",
     "title": "Agents, Environments, Runs, and Utility",
     "items": [
       {
@@ -308,12 +348,28 @@ window.COMP310_DATA = [
         "id": "c4-q0"
       },
       {
+        "title": "Intentional Stance",
+        "englishQuestion": "What is the intentional stance?",
+        "chineseQuestion": "什么是 intentional stance（意向立场）？",
+        "englishAnswer": "It is explaining or predicting a system's behaviour by treating it as if it has beliefs, desires, and intentions.",
+        "chineseAnswer": "它是把一个系统看作具有信念、欲望和意图，从而解释或预测其行为的方法。",
+        "id": "c4-q1"
+      },
+      {
+        "title": "Legitimate and Useful Intentional Stance",
+        "englishQuestion": "When is the intentional stance legitimate or useful?",
+        "chineseQuestion": "intentional stance 什么时候是 legitimate 或 useful？",
+        "englishAnswer": "It is legitimate if the system really has the mental states we ascribe to it. It is useful if treating the system this way helps us predict or explain its behaviour, even if the mental states are only an abstraction.",
+        "chineseAnswer": "如果系统确实具有我们赋予它的心理状态，它就是 legitimate；如果这种看法能帮助预测或解释行为，即使只是抽象模型，它也是 useful。",
+        "id": "c4-q2"
+      },
+      {
         "title": "Abstract Agent Functions",
         "englishQuestion": "What are see, action, and next in an abstract agent model?",
         "chineseQuestion": "抽象智能体模型中的 see、action 和 next 是什么？",
         "englishAnswer": "see: E -&gt; Per maps environment states to percepts. action: I -&gt; Ac maps internal states or intentions to actions. next: I x Per -&gt; I updates the internal state using the current state and a percept.",
         "chineseAnswer": "see: E -&gt; Per 把环境状态映射为感知；action: I -&gt; Ac 把内部状态或意图映射为动作；next: I x Per -&gt; I 根据当前内部状态和感知更新内部状态。",
-        "id": "c4-q1"
+        "id": "c4-q3"
       },
       {
         "title": "Predicate Task Specification",
@@ -321,7 +377,7 @@ window.COMP310_DATA = [
         "chineseQuestion": "什么是谓词任务规范？",
         "englishAnswer": "It maps each run to 0 or 1: Psi: R -&gt; {0,1}. 1 means success and 0 means failure.",
         "chineseAnswer": "它把每条运行映射到 0 或 1：Psi: R -&gt; {0,1}。1 表示成功，0 表示失败。",
-        "id": "c4-q2"
+        "id": "c4-q4"
       },
       {
         "title": "Achievement Task",
@@ -329,7 +385,7 @@ window.COMP310_DATA = [
         "chineseQuestion": "什么是达成型任务？",
         "englishAnswer": "It is specified by a set of good goal states G; the agent succeeds if it can force the environment into at least one state in G.",
         "chineseAnswer": "它由一组好的目标状态 G 定义；如果智能体能保证环境进入 G 中至少一个状态，就算成功。",
-        "id": "c4-q3"
+        "id": "c4-q5"
       },
       {
         "title": "Maintenance Goal",
@@ -337,7 +393,7 @@ window.COMP310_DATA = [
         "chineseQuestion": "什么是维持型目标？",
         "englishAnswer": "It is specified by a set of bad states B; the agent succeeds if it avoids all states in B.",
         "chineseAnswer": "它由一组坏状态 B 定义；智能体若能避免所有 B 中的状态，就算成功。",
-        "id": "c4-q4"
+        "id": "c4-q6"
       },
       {
         "title": "Expected Utility",
@@ -345,12 +401,12 @@ window.COMP310_DATA = [
         "chineseQuestion": "如何用期望效用比较智能体？",
         "englishAnswer": "For each run, multiply its probability by its utility, then add the results. The agent with the higher expected utility is optimal for that environment and utility function.",
         "chineseAnswer": "对每条运行，用概率乘以效用再求和。期望效用更大的智能体在该环境和效用函数下最优。",
-        "id": "c4-q5"
+        "id": "c4-q7"
       }
     ]
   },
   {
-    "frequency": "Frequency 2/3",
+    "frequency": "High Frequency",
     "title": "Social Choice and Voting",
     "items": [
       {
@@ -392,11 +448,35 @@ window.COMP310_DATA = [
         "englishAnswer": "A Condorcet winner beats every other outcome in pairwise majority contests; equivalently, it wins under every possible sequential majority agenda.",
         "chineseAnswer": "Condorcet winner 是在两两多数对决中击败所有其他结果的候选人；等价地，它在每一种可能的顺序多数议程下都会获胜。",
         "id": "c5-q4"
+      },
+      {
+        "title": "Condorcet's Paradox",
+        "englishQuestion": "What is Condorcet's Paradox?",
+        "chineseQuestion": "什么是 Condorcet's Paradox？",
+        "englishAnswer": "Majority preferences can be cyclic: a majority may prefer A to B, B to C, and C to A. So collective preference may be inconsistent even when individual preferences are rational.",
+        "chineseAnswer": "多数偏好可能形成循环：多数人偏好 A 胜过 B，B 胜过 C，同时 C 又胜过 A。所以个人偏好理性时，集体偏好也可能不一致。",
+        "id": "c5-q5"
+      },
+      {
+        "title": "Gibbard-Satterthwaite Theorem",
+        "englishQuestion": "What does the Gibbard-Satterthwaite Theorem say?",
+        "chineseQuestion": "Gibbard-Satterthwaite 定理说明什么？",
+        "englishAnswer": "For three or more outcomes, any reasonable non-dictatorial voting rule can be manipulated by strategic voting. Computational complexity may help if manipulation is hard to compute.",
+        "chineseAnswer": "当结果不少于三个时，任何合理的非独裁投票规则都可能被策略性投票操纵。如果操纵很难计算，计算复杂性可以提供一定保护。",
+        "id": "c5-q6"
+      },
+      {
+        "title": "Arrow's Theorem",
+        "englishQuestion": "What does Arrow's Theorem say?",
+        "chineseQuestion": "Arrow 定理说明什么？",
+        "englishAnswer": "No social welfare function can satisfy all of Arrow's fairness conditions at the same time, unless it is dictatorial.",
+        "chineseAnswer": "除非采用独裁规则，否则不存在一个社会福利函数能同时满足 Arrow 的所有公平条件。",
+        "id": "c5-q7"
       }
     ]
   },
   {
-    "frequency": "Frequency 2/3",
+    "frequency": "High Frequency",
     "title": "Negotiation, Auctions, and Strategic Interaction",
     "items": [
       {
@@ -422,11 +502,27 @@ window.COMP310_DATA = [
         "englishAnswer": "Overbidding can make the bidder win while paying more than its true value. Underbidding can make it lose an item it would profit from winning, while winning still pays the second-highest bid.",
         "chineseAnswer": "报高可能导致赢得物品但支付超过真实价值而亏损；报低可能错失本可获利的物品，而赢了时支付仍由第二高价决定。",
         "id": "c6-q2"
+      },
+      {
+        "title": "Combinatorial Auction",
+        "englishQuestion": "What is a combinatorial auction?",
+        "chineseQuestion": "什么是 combinatorial auction（组合拍卖）？",
+        "englishAnswer": "It is an auction where bidders can bid for bundles of goods, not just single items. The value of a bundle may be different from the sum of its parts.",
+        "chineseAnswer": "它是一种允许竞标者对物品组合出价的拍卖，而不只是对单个物品出价。组合的价值可能不同于各物品价值之和。",
+        "id": "c6-q3"
+      },
+      {
+        "title": "XOR Bids",
+        "englishQuestion": "What does an XOR bid mean in a combinatorial auction?",
+        "chineseQuestion": "组合拍卖中的 XOR bid 是什么意思？",
+        "englishAnswer": "XOR means the bidder wants at most one of the listed bundles. If more than one bundle matches, the bidder still only pays for the best accepted one.",
+        "chineseAnswer": "XOR 表示竞标者最多只想获得列出的一个组合。即使多个组合匹配，也只接受其中一个最合适的组合。",
+        "id": "c6-q4"
       }
     ]
   },
   {
-    "frequency": "Frequency 2/3",
+    "frequency": "Medium Frequency",
     "title": "Coordination, Social Behaviour, and Agent Architectures",
     "items": [
       {
@@ -456,7 +552,7 @@ window.COMP310_DATA = [
     ]
   },
   {
-    "frequency": "Frequency 1/3",
+    "frequency": "Medium Frequency",
     "title": "Ontologies, Speech Acts, and Agent Platforms",
     "items": [
       {

@@ -1,8 +1,8 @@
 # COMP310 Concept Questions Grouped by Frequency
 
-This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topic, from most frequent to least frequent.
+This document groups repeated COMP310 concept questions from 2008/09 to 2018/19. Low-frequency one-off topics are mostly left out.
 
-## Frequency 3/3: BDI Practical Reasoning, Planning, and Agent Control Loops
+## Very High Frequency: BDI Practical Reasoning, Planning, and Agent Control Loops
 
 ### Deliberation and Means-End Reasoning
 **English question:** What are deliberation and means-end reasoning in practical reasoning?
@@ -112,7 +112,7 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** 它是把视频、音频等原始传感器数据及时转换成准确的符号描述，让智能体能使用这些信息。
 
-## Frequency 3/3: Game Theory and Nash Equilibrium
+## Very High Frequency: Game Theory and Nash Equilibrium
 
 ### Nash Equilibrium
 **English question:** What is a Nash equilibrium?
@@ -195,7 +195,43 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** 每个有限博弈都至少存在一个混合策略纳什均衡。
 
-## Frequency 3/3: Cooperative Games, Coalitions, and Shapley Value
+### Pareto Efficient Outcome
+**English question:** What is a Pareto efficient outcome?
+
+**中文问题：** 什么是 Pareto efficient outcome（帕累托有效结果）？
+
+**English answer:** An outcome is Pareto efficient if no other outcome can make one player better off without making another player worse off.
+
+**中文答案：** 如果不存在另一个结果能让某个玩家更好、同时不让其他玩家变差，那么该结果就是帕累托有效的。
+
+### Maximising Social Welfare
+**English question:** What does it mean to maximise social welfare?
+
+**中文问题：** 什么是 maximising social welfare（最大化社会福利）？
+
+**English answer:** It means choosing the outcome with the highest total payoff for all players. Its limit is that it may ignore unfairness between players.
+
+**中文答案：** 它表示选择所有玩家收益总和最高的结果。局限是它可能忽略玩家之间是否公平。
+
+### Iterated Prisoner's Dilemma
+**English question:** Why can cooperation be rational in the infinitely iterated Prisoner's Dilemma?
+
+**中文问题：** 为什么在无限重复 Prisoner's Dilemma 中合作可能是理性的？
+
+**English answer:** Because future rounds can reward cooperation and punish defection. Strategies such as Tit-for-Tat can make long-term cooperation better than short-term defection.
+
+**中文答案：** 因为未来回合可以奖励合作、惩罚背叛。像 Tit-for-Tat 这样的策略能让长期合作优于短期背叛。
+
+### Program Equilibrium
+**English question:** How can program equilibria allow cooperation in the one-shot Prisoner's Dilemma?
+
+**中文问题：** program equilibrium 如何让一次性 Prisoner's Dilemma 中的合作成为可能？
+
+**English answer:** Players submit programs that can inspect each other. A program can cooperate if the other program is the same, and defect otherwise, making mutual cooperation rational.
+
+**中文答案：** 玩家提交能检查对方程序的程序。如果对方程序相同就合作，否则背叛，这样互相合作可以成为理性结果。
+
+## Very High Frequency: Cooperative Games, Coalitions, and Shapley Value
 
 ### Shapley Value
 **English question:** What is the Shapley value?
@@ -251,7 +287,16 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** 总支付不能超过大联盟价值，而且任何玩家或联盟都不能少于它自己能保证的价值。
 
-## Frequency 3/3: Argumentation
+### Coalition Stability
+**English question:** What does stability mean in coalition formation?
+
+**中文问题：** 联盟形成中的 stability（稳定性）是什么意思？
+
+**English answer:** Stability means no individual or subgroup has a reason to leave the grand coalition, because they cannot get a better payoff by forming their own coalition.
+
+**中文答案：** 稳定性表示没有个人或小联盟有理由离开大联盟，因为它们自己组联盟也得不到更好的收益。
+
+## Very High Frequency: Argumentation
 
 ### Grounded Extension
 **English question:** What is the grounded extension in an abstract argumentation system?
@@ -316,7 +361,7 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** 它是极大的 admissible set。
 
-## Frequency 2/3: Agents, Environments, Runs, and Utility
+## High Frequency: Agents, Environments, Runs, and Utility
 
 ### Agent Properties
 **English question:** What are reactivity, proactiveness, and social ability?
@@ -326,6 +371,24 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 **English answer:** Reactivity means responding to environmental changes. Proactiveness means taking initiative to achieve goals. Social ability means interacting with agents or humans through communication, cooperation, coordination, or negotiation.
 
 **中文答案：** reactivity 是响应环境变化；proactiveness 是主动追求目标；social ability 是通过通信、合作、协调或谈判与其他智能体或人类交互。
+
+### Intentional Stance
+**English question:** What is the intentional stance?
+
+**中文问题：** 什么是 intentional stance（意向立场）？
+
+**English answer:** It is explaining or predicting a system's behaviour by treating it as if it has beliefs, desires, and intentions.
+
+**中文答案：** 它是把一个系统看作具有信念、欲望和意图，从而解释或预测其行为的方法。
+
+### Legitimate and Useful Intentional Stance
+**English question:** When is the intentional stance legitimate or useful?
+
+**中文问题：** intentional stance 什么时候是 legitimate 或 useful？
+
+**English answer:** It is legitimate if the system really has the mental states we ascribe to it. It is useful if treating the system this way helps us predict or explain its behaviour, even if the mental states are only an abstraction.
+
+**中文答案：** 如果系统确实具有我们赋予它的心理状态，它就是 legitimate；如果这种看法能帮助预测或解释行为，即使只是抽象模型，它也是 useful。
 
 ### Abstract Agent Functions
 **English question:** What are `see`, `action`, and `next` in an abstract agent model?
@@ -372,7 +435,7 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** 对每条运行，用概率乘以效用再求和。期望效用更大的智能体在该环境和效用函数下最优。
 
-## Frequency 2/3: Social Choice and Voting
+## High Frequency: Social Choice and Voting
 
 ### Borda Count
 **English question:** What is Borda count?
@@ -419,7 +482,34 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** Condorcet winner 是在两两多数对决中击败所有其他结果的候选人；等价地，它在每一种可能的顺序多数议程下都会获胜。
 
-## Frequency 2/3: Negotiation, Auctions, and Strategic Interaction
+### Condorcet's Paradox
+**English question:** What is Condorcet's Paradox?
+
+**中文问题：** 什么是 Condorcet's Paradox？
+
+**English answer:** Majority preferences can be cyclic: a majority may prefer `A` to `B`, `B` to `C`, and `C` to `A`. So collective preference may be inconsistent even when individual preferences are rational.
+
+**中文答案：** 多数偏好可能形成循环：多数人偏好 `A` 胜过 `B`，`B` 胜过 `C`，同时 `C` 又胜过 `A`。所以个人偏好理性时，集体偏好也可能不一致。
+
+### Gibbard-Satterthwaite Theorem
+**English question:** What does the Gibbard-Satterthwaite Theorem say?
+
+**中文问题：** Gibbard-Satterthwaite 定理说明什么？
+
+**English answer:** For three or more outcomes, any reasonable non-dictatorial voting rule can be manipulated by strategic voting. Computational complexity may help if manipulation is hard to compute.
+
+**中文答案：** 当结果不少于三个时，任何合理的非独裁投票规则都可能被策略性投票操纵。如果操纵很难计算，计算复杂性可以提供一定保护。
+
+### Arrow's Theorem
+**English question:** What does Arrow's Theorem say?
+
+**中文问题：** Arrow 定理说明什么？
+
+**English answer:** No social welfare function can satisfy all of Arrow's fairness conditions at the same time, unless it is dictatorial.
+
+**中文答案：** 除非采用独裁规则，否则不存在一个社会福利函数能同时满足 Arrow 的所有公平条件。
+
+## High Frequency: Negotiation, Auctions, and Strategic Interaction
 
 ### Monotonic Concession Protocol
 **English question:** What are the main rules of the Monotonic Concession Protocol?
@@ -448,7 +538,25 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** 报高可能导致赢得物品但支付超过真实价值而亏损；报低可能错失本可获利的物品，而赢了时支付仍由第二高价决定。
 
-## Frequency 2/3: Coordination, Social Behaviour, and Agent Architectures
+### Combinatorial Auction
+**English question:** What is a combinatorial auction?
+
+**中文问题：** 什么是 combinatorial auction（组合拍卖）？
+
+**English answer:** It is an auction where bidders can bid for bundles of goods, not just single items. The value of a bundle may be different from the sum of its parts.
+
+**中文答案：** 它是一种允许竞标者对物品组合出价的拍卖，而不只是对单个物品出价。组合的价值可能不同于各物品价值之和。
+
+### XOR Bids
+**English question:** What does an XOR bid mean in a combinatorial auction?
+
+**中文问题：** 组合拍卖中的 XOR bid 是什么意思？
+
+**English answer:** XOR means the bidder wants at most one of the listed bundles. If more than one bundle matches, the bidder still only pays for the best accepted one.
+
+**中文答案：** XOR 表示竞标者最多只想获得列出的一个组合。即使多个组合匹配，也只接受其中一个最合适的组合。
+
+## Medium Frequency: Coordination, Social Behaviour, and Agent Architectures
 
 ### Subsumption Architecture Rules
 **English question:** What rules support Mars rock-gathering agents in a subsumption architecture?
@@ -477,7 +585,7 @@ This document groups the 2016/17, 2017/18, and 2018/19 concept questions by topi
 
 **中文答案：** social law 是一组规则，禁止智能体在某些状态下执行某些动作。它用于协调行为，同时不阻断重要焦点状态之间的可达性。
 
-## Frequency 1/3: Ontologies, Speech Acts, and Agent Platforms
+## Medium Frequency: Ontologies, Speech Acts, and Agent Platforms
 
 ### Upper Ontology
 **English question:** What is an upper ontology?
